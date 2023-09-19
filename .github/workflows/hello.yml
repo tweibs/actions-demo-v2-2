@@ -1,4 +1,4 @@
-# comment
+# comments
 name: Hello
 
 on: pull_request_target
