@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo -n $PASSWORD | openssl sha1
+echo -n $pass | openssl sha1
