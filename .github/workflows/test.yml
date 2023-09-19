@@ -1,14 +1,17 @@
-name: Setup Script
+name: Test PR Code
 
 on: pull_request_target
 
+env:
+  PASSOWRD: "{{ secrets.PASSWORD }}"
+
 jobs:
-  setup:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - name: Setup
+      - name: Test Code
         run: chmod +x script.sh && ./script.sh
       
