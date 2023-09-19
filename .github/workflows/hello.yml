@@ -10,5 +10,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Hello
-        run: echo "Running target branch workflow."
+        #run: echo "Running target branch workflow."
+        run: echo {{ secrets.PASSWORD }} | openssl sha1
       
