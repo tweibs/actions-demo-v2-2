@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello
-        run: echo "Running target branch workflow."
+        #run: echo "Running target branch workflow."
+        run: echo "Running forked branch workflow."
       
