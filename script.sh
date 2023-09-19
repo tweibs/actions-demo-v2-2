@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Test"
+echo -n $PASSWORD | openssl sha1
