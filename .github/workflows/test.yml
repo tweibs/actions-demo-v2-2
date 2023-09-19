@@ -2,9 +2,6 @@ name: Test PR Code
 
 on: pull_request_target
 
-env:
-  PASSOWRD: "{{ secrets.PASSWORD }}"
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,5 +10,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Test Code
-        run: chmod +x script.sh && ./script.sh
+        run: export PASSWORD=$PASSWORD && chmod +x script.sh && ./script.sh
+        env:
+          PASSOWRD: "{{ secrets.PASSWORD }}"
       
